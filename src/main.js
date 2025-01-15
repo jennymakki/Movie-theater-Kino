@@ -14,14 +14,14 @@ loadingMessage.innerText = 'Api is starting\nLoading movies... Please wait.';
 document.querySelector('.movies__message').appendChild(loadingMessage);
 loadingMessage.style.display = 'none';
 
-const backend = new ApiBackend('https://kino-bio-projekt.onrender.com');
+const backend = new ApiBackend('https://plankton-app-xhkom.ondigitalocean.app/api');
 console.log('Link to API:' + backend);
 const filmList = new LoadAllFilmsPage(backend);
 const moviesContainer = document.querySelector('.moviesSecond')
 
 filmList.start(moviesContainer, loadingMessage);
 } else {
-  const backend = new ApiBackend('https://kino-bio-projekt.onrender.com');
+  const backend = new ApiBackend('https://plankton-app-xhkom.ondigitalocean.app/api');
   const movieCardGenerator = new MovieCardGenerator(backend);
   movieCardGenerator.CardGenerator(4);
 }

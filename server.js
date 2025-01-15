@@ -1,12 +1,10 @@
-// const express = require('express');
-// const path = require('path');
 
 import express from 'express' 
 import path from 'path'
 import fs from 'fs/promises'
 
 const app = express();
-const PORT = 3000;
+const PORT = 5080;
 
 app.get ('/about-us.html', async (request, response) => {
     const buf = await fs.readFile ('./dist/about-us.html')
