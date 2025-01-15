@@ -8,6 +8,7 @@ export default defineConfig({
         main: './index.html',
         aboutUs: './about-us.html',
         movies: './movies.html',
+        singularmovie: './movie.html',
       },
     },
   },

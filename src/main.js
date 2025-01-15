@@ -7,6 +7,7 @@ import ApiBackend from './js/ApiBackend.js';
 import MobileMenu from './js/MobileMenu.js';
 import initLiveEvents from './js/_initLiveEvents.js';
 
+
 if(document.querySelector('.moviesSecond')) {
 const loadingMessage = document.createElement('h4');
 loadingMessage.classList.add('movies__message__new');

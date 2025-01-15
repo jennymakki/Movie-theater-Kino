@@ -36,6 +36,7 @@
 
 .moviesSecond__list__elem {
   width: calc(148px * 2);
+  height:42rem;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -77,4 +78,14 @@
 
 .moviesSecond__list__elem__rating {
   font-weight: bold;
+}
+
+a.moviesSecond__list__elem__link {
+  padding: 1rem;
+}
+
+.imdb-logo {
+  width: 4rem;  /* Adjust the width as per your design */
+  height: auto;
+  margin: 0;
 }

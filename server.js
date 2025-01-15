@@ -24,6 +24,12 @@ app.get ('/movies', async (request, response) => {
     response.send(html) 
 })
 
+app.get ('/movie', async (request, response) => {
+    const buf = await fs.readFile ('./dist/movie.html')
+    const html = buf.toString()
+    response.send(html) 
+})
+
 // Serve static files from the "public" directory
     app.use('/kino-bio-projekt', express.static('./dist')) 
 

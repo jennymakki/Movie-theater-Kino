@@ -1,0 +1,43 @@
+@use 'variables' as *; 
+
+
+/* movie.css */
+body {
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.movie-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.movie-image-container {
+    margin-top: 20px;
+}
+
+.movie-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.back-link {
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.back-link:hover {
+    background-color: #0056b3;
+}
+
