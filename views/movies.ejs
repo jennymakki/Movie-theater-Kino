@@ -7,6 +7,7 @@
     <title>Movies List</title>
 </head>
 <body>
+    <%- include('partials/header'); %>
     <h1>Movies</h1>
     <ul>
         <% movies.forEach(function(movie) { %>
@@ -15,5 +16,6 @@
             </li>
         <% }); %>
     </ul>
+    <%- include('partials/footer') %>
 </body>
 </html>

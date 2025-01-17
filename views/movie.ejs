@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= movie.attributes.title %></title>
 </head>
+
 <body>
+    <%- include('partials/header') %>
     <h1><%= movie.attributes.title %></h1>
     <img src="<%= movie.attributes.image.url %>" alt="<%= movie.attributes.title %>">
     <p><%= movie.attributes.intro %></p>
@@ -13,5 +15,6 @@
     <p><strong>Rating:</strong> <%= movie.attributes.rating %></p>
     <p><a href="<%= movie.attributes.imdbUrl %>" target="_blank">IMDb</a></p>
     <a href="/movies">Back to Movies</a>
+    <%- include('partials/footer') %>
 </body>
 </html>

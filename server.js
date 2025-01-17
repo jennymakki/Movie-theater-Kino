@@ -45,7 +45,10 @@ app.get('/movies', async (request, response) => {
         }
 
         // Render the EJS template with the movie data
-        response.render('movies', { movies: moviesData.data });
+        response.render('movies', { 
+            title: 'Movies - Kino Bio',
+            movies: moviesData.data 
+        });
     } catch (error) {
         console.error('Error fetching movies:', error);
         response.status(500).send('Error fetching movies');
@@ -64,7 +67,12 @@ app.get('/movie/:id', async (request, response) => {
         // Check if the movie data exists and render it with the EJS template
         if (movieData && movieData.data) {
             const movie = movieData.data;
-            response.render('movie', { movie });
+            
+            // Pass the movie and a dynamic title to the template
+            response.render('movie', {
+                title: movie.attributes.title, // Set the title dynamically based on the movie
+                movie: movie                   // Pass the full movie data
+            });
         } else {
             response.status(404).send('Movie not found');
         }
@@ -75,7 +83,7 @@ app.get('/movie/:id', async (request, response) => {
 });
 
 // Serve static files from the "dist" folder
-app.use('/kino-bio-projekt', express.static('./dist'));
+app.use('/dist', express.static('./dist'));
 
 // Start the server
 app.listen(PORT, () => {

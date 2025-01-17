@@ -8,7 +8,7 @@ import MobileMenu from './js/MobileMenu.js';
 import initLiveEvents from './js/_initLiveEvents.js';
 
 
-if(document.querySelector('.moviesSecond')) {
+/* if(document.querySelector('.moviesSecond')) {
 const loadingMessage = document.createElement('h4');
 loadingMessage.classList.add('movies__message__new');
 loadingMessage.innerText = 'Api is starting\nLoading movies... Please wait.';
@@ -26,5 +26,5 @@ filmList.start(moviesContainer, loadingMessage);
   const movieCardGenerator = new MovieCardGenerator(backend);
   movieCardGenerator.CardGenerator(4);
 }
-
+ */
 document.addEventListener('DOMContentLoaded', initLiveEvents);

@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: '/kino-bio-projekt/', // Replace 'my-vite-app' with your repository name
+  base: '/kino-bio-projekt/', 
   build: {
     rollupOptions: {
       input: {
