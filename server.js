@@ -27,9 +27,7 @@ app.get('/about-us.html', async (request, response) => {
 });
 
 app.get('/', async (request, response) => {
-    const buf = await fs.readFile('./dist/index.html');
-    const html = buf.toString();
-    response.send(html);
+response.render('index')
 });
 
 // Dynamic route for all movies
@@ -83,7 +81,8 @@ app.get('/movie/:id', async (request, response) => {
 });
 
 // Serve static files from the "dist" folder
-app.use('/dist', express.static('./dist'));
+app.use('/kino-bio-projekt', express.static('./dist'));
+app.use('/kino-bio-projekt/assets', express.static('./dist/assets'));
 
 // Start the server
 app.listen(PORT, () => {
