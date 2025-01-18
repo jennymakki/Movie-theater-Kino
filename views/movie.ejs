@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= movie.attributes.title %></title>
-</head>
+  </head>
 
-<body>
+  <body>
     <%- include('partials/header') %>
-    <h1><%= movie.attributes.title %></h1>
-    <img src="<%= movie.attributes.image.url %>" alt="<%= movie.attributes.title %>">
-    <p><%= movie.attributes.intro %></p>
-    <p><strong>Year:</strong> <%= movie.attributes.year %></p>
-    <p><strong>Rating:</strong> <%= movie.attributes.rating %></p>
-    <p><a href="<%= movie.attributes.imdbUrl %>" target="_blank">IMDb</a></p>
-    <a href="/movies">Back to Movies</a>
+    <h1 class="movie-h1"><%= movie.attributes.title %></h1>
+    <div class="movie-content">
+      <img src="<%= movie.attributes.image.url %>" alt="<%= movie.attributes.title %>" class="movie-image">
+      <p class="movie-intro"><%= movie.attributes.intro %></p>
+    </div>
+    <a href="/movies" class="back-link">Back to Movies</a>
     <%- include('partials/footer') %>
-</body>
+  </body>
 </html>

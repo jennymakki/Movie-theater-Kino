@@ -13,10 +13,10 @@
             <li class="movie-card">
                 <a href="/movie/<%= movie.id %>" class="movie-link">
                     <section class="movie-card-inner">
-                        <img src="<%= movie.attributes.image.url %>" alt="<%= movie.attributes.title %>" class="movie-image">
+                        <img src="<%= movie.attributes.image.url %>" alt="<%= movie.attributes.title %>" class="movies-image">
                         <div class="movie-info">
                             <h3 class="movie-title"><%= movie.attributes.title %></h3>
-                            <p class="movie-intro"><%= movie.attributes.intro %></p>
+                            <p class="movies-intro"><%= movie.attributes.intro %></p>
                             <a href="https://www.imdb.com/title/<%= movie.attributes.imdbId %>/" target="_blank">
                                 <img src="/kino-bio-projekt/assets/IMDb.png" alt="IMDb" class="imdb-logo">
                             </a>
