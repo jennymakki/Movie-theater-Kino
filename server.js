@@ -4,6 +4,7 @@ import fs from 'fs/promises';
 import fetch from 'node-fetch';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+import { marked } from 'marked';
 
 const app = express();
 const PORT = 5080;
@@ -42,6 +43,10 @@ app.get('/movies', async (request, response) => {
             return response.status(404).send('No movies found');
         }
 
+        moviesData.data.forEach(movie => {
+            movie.attributes.introHtml = marked(movie.attributes.intro); // Convert Markdown to HTML
+        });
+
         // Render the EJS template with the movie data
         response.render('movies', { 
             title: 'Movies - Kino Bio',
@@ -65,6 +70,8 @@ app.get('/movie/:id', async (request, response) => {
         // Check if the movie data exists and render it with the EJS template
         if (movieData && movieData.data) {
             const movie = movieData.data;
+
+            movie.attributes.introHtml = marked(movie.attributes.intro); // Convert Markdown to HTML
             
             // Pass the movie and a dynamic title to the template
             response.render('movie', {

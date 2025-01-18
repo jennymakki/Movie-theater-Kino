@@ -7,7 +7,7 @@
 </head>
 <body>
     <%- include('partials/header'); %>
-    <h1 class="movies-heading">Movies</h1>
+    <h1 class="movies-heading">Filmer</h1>
     <ul class="movie-list">
         <% movies.forEach(function(movie) { %>
             <li class="movie-card">
@@ -16,7 +16,9 @@
                         <img src="<%= movie.attributes.image.url %>" alt="<%= movie.attributes.title %>" class="movies-image">
                         <div class="movie-info">
                             <h3 class="movie-title"><%= movie.attributes.title %></h3>
-                            <p class="movies-intro"><%= movie.attributes.intro %></p>
+                            <div class="movie-intro markdown-content">
+                                <%- movie.attributes.introHtml %>
+                              </div>
                             <a href="https://www.imdb.com/title/<%= movie.attributes.imdbId %>/" target="_blank">
                                 <img src="/kino-bio-projekt/assets/IMDb.png" alt="IMDb" class="imdb-logo">
                             </a>

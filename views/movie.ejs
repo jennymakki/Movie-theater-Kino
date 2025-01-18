@@ -11,7 +11,7 @@
     <h1 class="movie-h1"><%= movie.attributes.title %></h1>
     <div class="movie-content">
       <img src="<%= movie.attributes.image.url %>" alt="<%= movie.attributes.title %>" class="movie-image">
-      <p class="movie-intro"><%= movie.attributes.intro %></p>
+      <p class="movie-intro"><%- movie.attributes.introHtml %></p>
     </div>
     <a href="/movies" class="back-link">Back to Movies</a>
     <%- include('partials/footer') %>

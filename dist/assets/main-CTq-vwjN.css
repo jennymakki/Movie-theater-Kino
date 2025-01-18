@@ -928,10 +928,17 @@ body {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.movie-intro {
+.movie-intro,
+p {
     font-size: 1.5rem;
     color: #cdcdcd;
 }
+
+.markdown-content p {
+    font-size: 1rem;
+    color: #2b0404;
+}
+
 
 .back-link {
     font-size: 1.1em;
@@ -946,6 +953,16 @@ body {
     transform: scale(1.1);
 }
 
+.index-movies-button {
+    text-decoration: none;
+    color: #cdcdcd; 
+    font-size: 3rem;
+}
+
+.index-movies-button:hover {
+    transform: scale(1.2);
+} 
+
 @keyframes liftCard {
     0% {
         transform: translateY(0);
@@ -953,4 +970,14 @@ body {
     100% {
         transform: translateY(-15px); 
     }
+}
+
+@media (max-width: 600px) { 
+    .movie-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
 }
