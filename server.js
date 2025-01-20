@@ -8,7 +8,6 @@ import { marked } from 'marked';
 
 const API_URL = 'https://plankton-app-xhkom.ondigitalocean.app/api/movies';
 
-// Function to create and configure the app
 const initApp = () => {
   const app = express();
   const PORT = 5080;
@@ -19,10 +18,8 @@ const initApp = () => {
   app.set('view engine', 'ejs');
   app.set('views', path.join(__dirname, 'views'));
 
-  // Static files (e.g., for CSS and JS)
   app.use('/assets', express.static(path.join(__dirname, 'public')));
 
-  // Static HTML pages
   app.get('/about-us.html', async (request, response) => {
     const buf = await fs.readFile('./dist/about-us.html');
     const html = buf.toString();
@@ -33,7 +30,6 @@ const initApp = () => {
     response.render('index', { title: 'Home' });
   });
 
-  // Dynamic route for all movies
   app.get('/movies', async (request, response) => {
     try {
       const apiResponse = await fetch(API_URL);
@@ -61,7 +57,6 @@ const initApp = () => {
     }
   });
 
-  // Dynamic route for individual movie details
   app.get('/movie/:id', async (request, response) => {
     const movieId = request.params.id;
 
@@ -91,11 +86,9 @@ const initApp = () => {
     }
   });
 
-  // Serve static files from the "dist" folder
   app.use('/kino-bio-projekt', express.static('./dist'));
   app.use('/kino-bio-projekt/assets', express.static('./dist/assets'));
 
-  // 404 handler - if no routes match, this will render the 404 page
   app.use((request, response) => {
     response.status(404).render('404', {
       title: 'Page Not Found'
@@ -105,10 +98,8 @@ const initApp = () => {
   return app;
 };
 
-// Export the function to create the app
 export { initApp };
 
-// If this is the entry point (not in test mode), start the server
 if (process.env.NODE_ENV !== 'test') {
   const app = initApp();
   const PORT = 5080;
