@@ -963,6 +963,20 @@ p {
     transform: scale(1.2);
 } 
 
+.error-message {
+  color: #cdcdcd; 
+  font-size: 2rem;
+  padding: 2rem;
+  text-align: center;
+  display: block;
+}
+
+.error-link {
+  color: #cdcdcd; 
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
 @keyframes liftCard {
     0% {
         transform: translateY(0);

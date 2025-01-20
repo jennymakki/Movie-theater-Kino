@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "prepare": "husky install",
     "start": "node server.js",
-    "test": "jest"
+    "test-watch": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --watch",
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "husky": {
     "hooks": {
@@ -23,6 +24,7 @@
     ]
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "eslint": "^9.17.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
